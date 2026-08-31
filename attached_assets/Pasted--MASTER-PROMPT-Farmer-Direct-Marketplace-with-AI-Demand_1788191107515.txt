@@ -1,0 +1,946 @@
+# MASTER PROMPT — Farmer Direct Marketplace with AI Demand Forecasting
+
+You are a senior full-stack software engineer and UI/UX designer. Build a complete, working, presentation-ready web application from end to end based on the following problem statement.
+
+## 1. PROJECT TITLE
+
+**FarmDirect — Direct Farmer-to-Customer Digital Marketplace**
+
+### Problem Statement
+
+Multiple intermediaries reduce farmers' earnings and increase consumer prices.
+
+The goal is to create a digital marketplace that:
+
+* Connects farmers/FPOs directly with consumers and bulk buyers.
+* Allows farmers to sell products directly.
+* Allows customers to purchase products directly from farmers.
+* Provides basic logistics and delivery support.
+* Uses AI/data-driven demand forecasting to help farmers decide what to grow or stock.
+* Uses route optimization concepts to improve delivery efficiency.
+
+### Expected Benefits
+
+* Better prices for farmers.
+* Lower prices for consumers.
+* Reduced supply-chain inefficiencies.
+* Better demand visibility for farmers.
+* Improved delivery management.
+
+---
+
+# 2. TECHNOLOGY STACK
+
+Use the following technologies.
+
+### Frontend
+
+* React.js
+* JavaScript
+* HTML5
+* CSS3
+* Tailwind CSS or Bootstrap
+* React Router
+* Axios or Fetch API
+* Recharts or another suitable chart library
+
+### Backend
+
+* Node.js
+* Express.js
+
+### Database
+
+**Do NOT use a database for this presentation/demo version.**
+
+Use in-memory/sample data or local JSON/JavaScript data structures.
+
+The application must work immediately after installation without requiring MongoDB, MySQL, PostgreSQL, Firebase, etc.
+
+### Authentication
+
+Do not implement real production authentication.
+
+For this academic/demo presentation:
+
+* Store 10 farmer accounts in application data.
+* Store 10 customer accounts in application data.
+* Validate login credentials against that data.
+* Use localStorage/session state to maintain the logged-in user.
+* Clearly structure the code so a real database/authentication system can be added later.
+
+---
+
+# 3. APPLICATION USERS
+
+There are two roles:
+
+1. Farmer
+2. Customer
+
+The application must have a role-based login system.
+
+---
+
+# 4. DEMO LOGIN USERS
+
+Create exactly 10 demo farmers and 10 demo customers.
+
+Use realistic names.
+
+Example farmer accounts:
+
+| Name         | Email                                                     | Password  | Role   |
+| ------------ | --------------------------------------------------------- | --------- | ------ |
+| Ramesh Kumar | [farmer1@farmdirect.com](mailto:farmer1@farmdirect.com)   | farmer123 | Farmer |
+| Suresh Reddy | [farmer2@farmdirect.com](mailto:farmer2@farmdirect.com)   | farmer123 | Farmer |
+| Ravi Kumar   | [farmer3@farmdirect.com](mailto:farmer3@farmdirect.com)   | farmer123 | Farmer |
+| Mahesh Rao   | [farmer4@farmdirect.com](mailto:farmer4@farmdirect.com)   | farmer123 | Farmer |
+| Srinivas     | [farmer5@farmdirect.com](mailto:farmer5@farmdirect.com)   | farmer123 | Farmer |
+| Prakash      | [farmer6@farmdirect.com](mailto:farmer6@farmdirect.com)   | farmer123 | Farmer |
+| Anil Kumar   | [farmer7@farmdirect.com](mailto:farmer7@farmdirect.com)   | farmer123 | Farmer |
+| Rajesh       | [farmer8@farmdirect.com](mailto:farmer8@farmdirect.com)   | farmer123 | Farmer |
+| Venkat       | [farmer9@farmdirect.com](mailto:farmer9@farmdirect.com)   | farmer123 | Farmer |
+| Naveen       | [farmer10@farmdirect.com](mailto:farmer10@farmdirect.com) | farmer123 | Farmer |
+
+Example customer accounts:
+
+| Name   | Email                                                         | Password    | Role     |
+| ------ | ------------------------------------------------------------- | ----------- | -------- |
+| Akhil  | [customer1@farmdirect.com](mailto:customer1@farmdirect.com)   | customer123 | Customer |
+| Priya  | [customer2@farmdirect.com](mailto:customer2@farmdirect.com)   | customer123 | Customer |
+| Rahul  | [customer3@farmdirect.com](mailto:customer3@farmdirect.com)   | customer123 | Customer |
+| Sneha  | [customer4@farmdirect.com](mailto:customer4@farmdirect.com)   | customer123 | Customer |
+| Ananya | [customer5@farmdirect.com](mailto:customer5@farmdirect.com)   | customer123 | Customer |
+| Kiran  | [customer6@farmdirect.com](mailto:customer6@farmdirect.com)   | customer123 | Customer |
+| Neha   | [customer7@farmdirect.com](mailto:customer7@farmdirect.com)   | customer123 | Customer |
+| Arjun  | [customer8@farmdirect.com](mailto:customer8@farmdirect.com)   | customer123 | Customer |
+| Divya  | [customer9@farmdirect.com](mailto:customer9@farmdirect.com)   | customer123 | Customer |
+| Varun  | [customer10@farmdirect.com](mailto:customer10@farmdirect.com) | customer123 | Customer |
+
+You may improve the names, but maintain 10 farmers and 10 customers.
+
+Include demo credentials somewhere accessible from the login page, such as a "Demo Credentials" expandable section, because this application is being used for a presentation.
+
+---
+
+# 5. APPLICATION PAGES
+
+Create the following pages.
+
+## Public Pages
+
+### 1. Landing/Home Page
+
+Create a modern agricultural marketplace landing page.
+
+Include:
+
+* FarmDirect logo/name
+* Navigation bar
+* Home
+* Products
+* How It Works
+* AI Forecasting
+* About
+* Login
+* Register/demo access
+
+Hero section:
+
+> "From Farm to Your Table — Directly."
+
+Subtitle:
+
+> "Connect directly with farmers, get fresher products at better prices, and help farmers earn more."
+
+CTA buttons:
+
+* Shop Fresh Produce
+* Sell Your Products
+
+Include attractive agricultural visuals/icons.
+
+Show statistics such as:
+
+* 100+ Farmers
+* 500+ Products
+* 1,000+ Happy Customers
+* 30% Better Farmer Earnings
+
+These can be demo statistics.
+
+---
+
+# 6. LOGIN SYSTEM
+
+Create a professional login page.
+
+The user should first choose:
+
+### "Login as"
+
+* Farmer
+* Customer
+
+Then display:
+
+* Email
+* Password
+* Login button
+
+Validation:
+
+* Invalid email/password → show clear error.
+* Correct credentials → redirect to the appropriate dashboard.
+* Farmer cannot access customer-only pages.
+* Customer cannot access farmer-only pages.
+
+Add:
+
+* Remember me
+* Show/hide password
+* Demo credentials section
+* Logout functionality
+
+Use React state/localStorage.
+
+---
+
+# 7. FARMER DASHBOARD
+
+After farmer login, show a dedicated farmer dashboard.
+
+Dashboard should contain:
+
+### Overview Cards
+
+* Total Products
+* Total Orders
+* Total Sales
+* Pending Orders
+* Low Stock Products
+
+Example:
+
+> Total Sales: ₹24,850
+
+> Products Listed: 18
+
+> Orders Received: 42
+
+> Pending Orders: 7
+
+---
+
+## Farmer Navigation
+
+Sidebar/navbar:
+
+* Dashboard
+* My Products
+* Add Product
+* Orders
+* AI Demand Forecast
+* Logistics
+* Sales Analytics
+* Profile
+* Logout
+
+---
+
+# 8. FARMER PRODUCT MANAGEMENT
+
+Farmers must be able to add products.
+
+Create an "Add Product" form.
+
+Fields:
+
+* Product name
+* Category
+* Description
+* Price
+* Quantity
+* Unit
+* Location
+* Harvest date
+* Product image
+* Organic/non-organic
+* Availability
+
+Categories:
+
+* Vegetables
+* Fruits
+* Grains
+* Pulses
+* Dairy
+* Spices
+* Other
+
+Example:
+
+Product:
+Tomatoes
+
+Price:
+₹40/kg
+
+Quantity:
+250 kg
+
+Location:
+Hyderabad
+
+---
+
+## Product Management
+
+Farmer can:
+
+* Add product
+* Edit product
+* Delete product
+* Update quantity
+* Mark product unavailable
+* View product details
+
+Use in-memory state/localStorage so changes remain during the demo session.
+
+---
+
+# 9. CUSTOMER DASHBOARD
+
+Create a modern customer marketplace.
+
+Navigation:
+
+* Home
+* Products
+* Categories
+* Cart
+* My Orders
+* Track Order
+* Profile
+* Logout
+
+Dashboard cards:
+
+* Total Orders
+* Active Orders
+* Cart Items
+* Money Saved
+
+---
+
+# 10. PRODUCT MARKETPLACE
+
+Create a beautiful product browsing page.
+
+Each product card should show:
+
+* Product image
+* Product name
+* Farmer name
+* Location
+* Price
+* Unit
+* Available quantity
+* Organic badge if applicable
+* Rating
+* Add to Cart button
+* View Details button
+
+Add:
+
+### Search
+
+Search products by name.
+
+### Filters
+
+* Category
+* Price range
+* Organic
+* Location
+* Availability
+
+### Sorting
+
+* Price low → high
+* Price high → low
+* Popularity
+* Recently added
+
+---
+
+# 11. PRODUCT DETAILS
+
+When customer clicks a product, show:
+
+* Large product image
+* Product name
+* Farmer information
+* Price
+* Quantity available
+* Description
+* Location
+* Harvest date
+* Organic status
+* Rating/reviews
+* Quantity selector
+* Add to Cart
+
+Show:
+
+> "Buy directly from the farmer"
+
+---
+
+# 12. SHOPPING CART
+
+Create a complete cart system.
+
+Customer can:
+
+* Add products
+* Increase quantity
+* Decrease quantity
+* Remove products
+* See subtotal
+* See delivery fee
+* See total
+
+Example:
+
+Subtotal: ₹450
+
+Delivery: ₹40
+
+Total: ₹490
+
+CTA:
+
+**Proceed to Checkout**
+
+Persist cart using localStorage.
+
+---
+
+# 13. CHECKOUT
+
+Create a simple checkout flow.
+
+Fields:
+
+* Customer name
+* Phone
+* Delivery address
+* City
+* PIN code
+* Delivery instructions
+* Payment method
+
+Since this is a presentation demo, DO NOT integrate a real payment gateway.
+
+Payment options:
+
+* Cash on Delivery
+* Demo UPI
+* Demo Card
+
+Show:
+
+> "Demo Payment — No real transaction will occur."
+
+After checkout:
+
+Create an order.
+
+Generate:
+
+* Order ID
+* Order date
+* Items
+* Farmer
+* Total
+* Delivery address
+* Estimated delivery date
+* Order status
+
+---
+
+# 14. ORDER MANAGEMENT
+
+## Customer
+
+Customer should see:
+
+* Order ID
+* Products
+* Farmer
+* Total
+* Date
+* Status
+* Delivery estimate
+
+Order status:
+
+1. Order Placed
+2. Confirmed by Farmer
+3. Preparing
+4. Picked Up
+5. In Transit
+6. Delivered
+
+Create a visual progress/timeline component.
+
+---
+
+## Farmer
+
+Farmer should see incoming orders.
+
+Farmer can:
+
+* Accept order
+* Reject order
+* Mark preparing
+* Mark ready for pickup
+* Mark picked up
+
+Use buttons to change status.
+
+Changes should immediately reflect on the customer side.
+
+---
+
+# 15. AI DEMAND FORECASTING
+
+This is one of the most important parts of the project.
+
+Create a dedicated:
+
+**AI Demand Forecasting Dashboard**
+
+The goal is to help farmers understand which products are likely to be in high demand.
+
+Because this is a demo application and no external AI API is required, implement a **demo AI forecasting engine** using historical sales/sample data.
+
+Do NOT falsely claim that a real machine-learning model is running if it isn't.
+
+Present it as:
+
+> "AI-Powered Demand Forecast"
+
+and explain in the UI:
+
+> "Forecasts are generated using historical sales trends, seasonal patterns, and recent demand."
+
+---
+
+# 16. FORECAST DATA
+
+Create historical data for products such as:
+
+* Tomato
+* Potato
+* Onion
+* Rice
+* Wheat
+* Mango
+* Banana
+* Spinach
+* Carrot
+* Chilli
+* Turmeric
+* Green peas
+
+For each product include sample weekly/monthly sales.
+
+Example:
+
+Tomato:
+
+Week 1: 120 kg
+Week 2: 135 kg
+Week 3: 150 kg
+Week 4: 175 kg
+Week 5: 190 kg
+
+---
+
+# 17. FORECAST ALGORITHM
+
+Implement a simple explainable forecasting algorithm.
+
+For example:
+
+* Calculate moving average.
+* Calculate recent growth rate.
+* Apply a seasonal factor.
+* Generate next-period predicted demand.
+
+Example conceptual formula:
+
+Predicted Demand =
+Moving Average × Growth Factor × Seasonal Factor
+
+Then classify:
+
+### High Demand
+
+Predicted demand > threshold.
+
+### Medium Demand
+
+Predicted demand between thresholds.
+
+### Low Demand
+
+Predicted demand below threshold.
+
+Make the thresholds configurable.
+
+---
+
+# 18. AI FORECAST UI
+
+Display:
+
+### Forecast Summary
+
+Cards:
+
+* 🔥 High Demand Products
+* 📈 Increasing Demand
+* ⚠️ Low Demand
+* 📦 Recommended Stock
+
+Example:
+
+**Tomatoes**
+
+Current demand:
+175 kg/week
+
+Predicted demand:
+215 kg/week
+
+Trend:
+↑ 23%
+
+Demand:
+HIGH
+
+Recommendation:
+
+> "Increase tomato inventory by approximately 20%."
+
+---
+
+# 19. FORECAST CHARTS
+
+Use Recharts or a suitable chart library.
+
+Include:
+
+### Line Chart
+
+Historical demand vs predicted demand.
+
+### Bar Chart
+
+Demand forecast by product.
+
+### Pie/Donut Chart
+
+High/Medium/Low demand distribution.
+
+### Trend indicators
+
+* Increasing
+* Stable
+* Decreasing
+
+Make the charts visually attractive and easy to explain during a presentation.
+
+---
+
+# 20. FARMER AI RECOMMENDATIONS
+
+Create actionable recommendations.
+
+Example:
+
+### Recommendation 1
+
+> Tomato demand is expected to increase by 23%.
+> Consider increasing production/stock.
+
+### Recommendation 2
+
+> Onion demand is stable.
+> Maintain current inventory levels.
+
+### Recommendation 3
+
+> Mango demand is expected to decrease.
+> Avoid excessive stock to reduce wastage.
+
+---
+
+
+# 22. PROFILE PAGE
+
+Create profile pages for both users.
+
+Farmer:
+
+* Name
+* Email
+* Phone
+* Farm name
+* Location
+* Farming type
+* Products
+
+Customer:
+
+* Name
+* Email
+* Phone
+* Address
+
+Allow basic editing.
+
+Since there is no database, save changes to localStorage.
+
+---
+# 23. DATA ARCHITECTURE
+
+Since there is no database, create centralized sample data files.
+
+Suggested structure:
+
+src/
+  data/
+    users.js
+    products.js
+    orders.js
+    salesData.js
+    forecasts.js
+
+  components/
+    Navbar.jsx
+    Sidebar.jsx
+    ProductCard.jsx
+    OrderCard.jsx
+    ForecastChart.jsx
+    StatCard.jsx
+    RouteTracker.jsx
+
+  pages/
+    Home.jsx
+    Login.jsx
+
+    farmer/
+      FarmerDashboard.jsx
+      Products.jsx
+      AddProduct.jsx
+      FarmerOrders.jsx
+      Forecast.jsx
+      Logistics.jsx
+      Analytics.jsx
+      FarmerProfile.jsx
+
+    customer/
+      CustomerDashboard.jsx
+      Marketplace.jsx
+      ProductDetails.jsx
+      Cart.jsx
+      Checkout.jsx
+      CustomerOrders.jsx
+      TrackOrder.jsx
+      CustomerProfile.jsx
+
+  context/
+    AuthContext.jsx
+    CartContext.jsx
+    AppContext.jsx
+
+  services/
+    forecastService.js
+    routeService.js
+
+  App.jsx
+  main.jsx
+```
+
+Adapt this structure if necessary, but maintain clean separation of concerns.
+
+# 24. BACKEND
+
+Create an Express.js backend.
+
+Suggested API structure:
+
+```text
+GET    /api/products
+POST   /api/products
+PUT    /api/products/:id
+DELETE /api/products/:id
+
+GET    /api/orders
+POST   /api/orders
+PUT    /api/orders/:id/status
+
+POST   /api/login
+
+GET    /api/forecast
+GET    /api/analytics
+GET    /api/logistics
+```
+
+Because there is no database, the backend may use in-memory arrays.
+
+Initialize it with demo data.
+
+Make sure the frontend can communicate with the backend.
+
+Use environment variables for API configuration.
+
+---
+
+# 32. ERROR HANDLING
+
+Implement proper error handling.
+
+Examples:
+
+* Invalid login
+* Empty product form
+* Invalid price
+* Invalid quantity
+* Product unavailable
+* Insufficient stock
+* Empty cart
+* Failed order
+* Unauthorized route access
+
+Show friendly UI messages.
+
+---
+
+# 24. SAMPLE PRODUCTS
+
+Populate the application with at least 20 realistic products.
+
+Include:
+
+* Tomatoes
+* Potatoes
+* Onions
+* Carrots
+* Spinach
+* Green Chilli
+* Brinjal
+* Cauliflower
+* Cabbage
+* Mangoes
+* Bananas
+* Apples
+* Rice
+* Wheat
+* Turmeric
+* Coriander
+* Green Peas
+* Groundnuts
+* Sugarcane
+* Corn
+
+Assign products to the demo farmers.
+
+---
+
+# 25. SAMPLE ORDERS
+
+Create at least 15 demo orders.
+
+Distribute them across:
+
+* Different farmers
+* Different customers
+* Different products
+* Different order statuses
+
+This ensures the dashboards look populated during the presentation.
+
+---
+
+# 26. SAMPLE SALES DATA
+
+Create realistic historical sales data for at least 10 products.
+
+Use enough data to make the charts interesting.
+
+Include:
+
+* Previous weeks/months
+* Current demand
+* Forecast demand
+* Growth percentage
+* Demand classification
+
+---
+
+
+# 27. INSTALLATION
+
+The final project should be easy to run.
+
+Expected commands should be similar to:
+
+```bash
+npm install
+npm run dev
+```
+
+If frontend and backend are separate:
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+and:
+
+```bash
+cd backend
+npm install
+npm run dev
+```
+
+Configure the project so the exact commands are clearly documented.
+
+# 28. OUTPUT EXPECTATION
+
+At the end, provide:
+
+1. Complete project structure.
+2. All source files.
+3. Frontend implementation.
+4. Backend implementation.
+5. Sample data.
+6. Forecasting engine.
+7. Logistics/route optimization engine.
+
+If you are operating in an IDE/coding environment, create the files directly in the project rather than merely displaying them in the response.
+
+If you encounter an error while implementing the application, debug and fix it before moving on.
+
+**Do not leave TODOs for core functionality.**
+
+The final result must be a polished, working, presentation-ready **FarmDirect digital marketplace**.

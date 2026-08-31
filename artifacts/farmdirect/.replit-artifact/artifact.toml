@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "FarmDirect"
+description = "A polished direct farmer-to-customer marketplace for browsing fresh produce, managing farm listings, placing demo orders, and exploring explainable AI demand forecasts."
+version = "1.0.0"
+id = "artifacts/farmdirect"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22556
+
+[services.development]
+run = "pnpm --filter @workspace/farmdirect run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/farmdirect", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/farmdirect/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22556"
+BASE_PATH = "/"
