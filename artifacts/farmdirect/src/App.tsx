@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 import {
   getGetOrdersQueryKey, getGetProductsQueryKey, getGetProfileQueryKey,
-  getGetProductQueryKey, useCreateOrder, useCreateProduct,
+  getGetProductQueryKey, setBaseUrl, useCreateOrder, useCreateProduct,
   useDeleteProduct, useGetAnalytics, useGetForecast, useGetLogistics, useGetOrders,
   useGetProduct, useGetProducts, useGetProfile, useHealthCheck, useLogin, useUpdateOrderStatus,
   useUpdateProduct, useUpdateProfile
@@ -22,6 +22,8 @@ import type {
   ProfileUpdate, User
 } from '@workspace/api-client-react';
 import { Link, Route, Switch, useLocation, useParams, Router as WouterRouter } from 'wouter';
+
+setBaseUrl('https://farmdirect-ueb6.onrender.com');
 
 const queryClient = new QueryClient();
 const money = (value: number) => `₹${Number(value || 0).toLocaleString('en-IN', { maximumFractionDigits: 0 })}`;
