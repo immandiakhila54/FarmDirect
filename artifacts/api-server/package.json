@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node --enable-source-maps --import tsx/esm ./src/index.ts",
     "build": "node ./build.mjs",
-    "start": "cross-env PORT=3000 node --enable-source-maps ./dist/index.mjs",
+    "start": "node --enable-source-maps ./dist/index.mjs",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
