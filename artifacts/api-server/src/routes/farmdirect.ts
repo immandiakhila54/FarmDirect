@@ -245,25 +245,34 @@ const orderStatuses: OrderStatus[] = [
   "ready",
   "in_transit",
 ];
+function calculateDeliveryFee(subtotal: number): number {
+  if (!subtotal || subtotal <= 0) return 0;
+  if (subtotal >= 250) return 0;
+  if (subtotal < 50) return 10;
+  if (subtotal < 150) return 15;
+  return 20;
+}
+
 const orders: Order[] = Array.from({ length: 15 }, (_, index) => {
   const customer = customers[index % customers.length];
   const items = orderItemsFor(index);
   const subtotal = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const deliveryFee = calculateDeliveryFee(subtotal);
   return {
     id: `FD-2026-${String(1001 + index)}`,
     customerId: customer.id,
     customerName: customer.name,
     items,
     subtotal,
-    deliveryFee: subtotal > 700 ? 0 : 40,
-    total: subtotal + (subtotal > 700 ? 0 : 40),
+    deliveryFee,
+    total: subtotal + deliveryFee,
     address: customer.address ?? "Lake View Road",
     city: customer.location,
     pinCode: `5000${10 + index}`,
     instructions: index % 3 === 0 ? "Please call on arrival." : "",
     paymentMethod: index % 2 === 0 ? "Cash on Delivery" : "Demo UPI",
     date: `2026-08-${String(31 - (index % 13)).padStart(2, "0")}`,
-    estimatedDelivery: `2026-09-${String(1 + (index % 5)).padStart(2, "0")}`,
+    estimatedDelivery: "15–20 mins (Express Local Delivery)",
     status: orderStatuses[index],
   };
 });
@@ -413,7 +422,7 @@ route.post("/orders", (req, res) => {
     }
   });
   const subtotal = normalizedItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  const deliveryFee = subtotal > 700 ? 0 : 40;
+  const deliveryFee = calculateDeliveryFee(subtotal);
   const order: Order = {
     id: `FD-2026-${String(1000 + orderSequence++)}`,
     customerId: customer.id,
@@ -428,7 +437,7 @@ route.post("/orders", (req, res) => {
     instructions: parsed.data.instructions,
     paymentMethod: parsed.data.paymentMethod,
     date: new Date().toISOString().slice(0, 10),
-    estimatedDelivery: new Date(Date.now() + 3 * 86400000).toISOString().slice(0, 10),
+    estimatedDelivery: "15–20 mins (Express Local Delivery)",
     status: "placed",
   };
   orders.unshift(order);

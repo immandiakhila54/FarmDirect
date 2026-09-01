@@ -52,6 +52,7 @@ catalog:
   '@vitejs/plugin-react': ^5.0.4
   class-variance-authority: ^0.7.1
   clsx: ^2.1.1
+  cross-env: ^7.0.3
   drizzle-orm: ^0.45.2
   framer-motion: ^12.23.24
   lucide-react: ^0.545.0
@@ -69,27 +70,7 @@ catalog:
 autoInstallPeers: false
 
 overrides:
-  # replit uses linux-x64 only, we can exclude all other platforms
-  "esbuild>@esbuild/darwin-arm64": "-"
-  "esbuild>@esbuild/darwin-x64": "-"
-  "esbuild>@esbuild/freebsd-arm64": "-"
-  "esbuild>@esbuild/freebsd-x64": "-"
-  "esbuild>@esbuild/linux-arm": "-"
-  "esbuild>@esbuild/linux-arm64": "-"
-  "esbuild>@esbuild/linux-ia32": "-"
-  "esbuild>@esbuild/linux-loong64": "-"
-  "esbuild>@esbuild/linux-mips64el": "-"
-  "esbuild>@esbuild/linux-ppc64": "-"
-  "esbuild>@esbuild/linux-riscv64": "-"
-  "esbuild>@esbuild/linux-s390x": "-"
-  "esbuild>@esbuild/netbsd-arm64": "-"
-  "esbuild>@esbuild/netbsd-x64": "-"
-  "esbuild>@esbuild/openbsd-arm64": "-"
-  "esbuild>@esbuild/openbsd-x64": "-"
-  "esbuild>@esbuild/sunos-x64": "-"
-  "esbuild>@esbuild/win32-arm64": "-"
-  "esbuild>@esbuild/win32-ia32": "-"
-  "esbuild>@esbuild/win32-x64": "-"
+  # Platform-specific exclusions removed for Windows local development
   "esbuild>@esbuild/aix-ppc64": '-'
   "esbuild>@esbuild/android-arm": '-'
   "esbuild>@esbuild/android-arm64": '-'
@@ -115,30 +96,7 @@ overrides:
   "@tailwindcss/oxide>@tailwindcss/oxide-win32-arm64-msvc": "-"
   "@tailwindcss/oxide>@tailwindcss/oxide-win32-x64-msvc": "-"
   "@tailwindcss/oxide>@tailwindcss/oxide-linux-x64-musl": "-"
-  "rollup>@rollup/rollup-android-arm-eabi": "-"
-  "rollup>@rollup/rollup-android-arm64": "-"
-  "rollup>@rollup/rollup-darwin-arm64": "-"
-  "rollup>@rollup/rollup-darwin-x64": "-"
-  "rollup>@rollup/rollup-freebsd-arm64": "-"
-  "rollup>@rollup/rollup-freebsd-x64": "-"
-  "rollup>@rollup/rollup-linux-arm-gnueabihf": "-"
-  "rollup>@rollup/rollup-linux-arm-musleabihf": "-"
-  "rollup>@rollup/rollup-linux-arm64-gnu": "-"
-  "rollup>@rollup/rollup-linux-arm64-musl": "-"
-  "rollup>@rollup/rollup-linux-loong64-gnu": "-"
-  "rollup>@rollup/rollup-linux-loong64-musl": "-"
-  "rollup>@rollup/rollup-linux-ppc64-gnu": "-"
-  "rollup>@rollup/rollup-linux-ppc64-musl": "-"
-  "rollup>@rollup/rollup-linux-riscv64-gnu": "-"
-  "rollup>@rollup/rollup-linux-riscv64-musl": "-"
-  "rollup>@rollup/rollup-linux-s390x-gnu": "-"
-  "rollup>@rollup/rollup-linux-x64-musl": "-"
-  "rollup>@rollup/rollup-openbsd-x64": "-"
-  "rollup>@rollup/rollup-openharmony-arm64": "-"
-  "rollup>@rollup/rollup-win32-arm64-msvc": "-"
-  "rollup>@rollup/rollup-win32-ia32-msvc": "-"
-  "rollup>@rollup/rollup-win32-x64-gnu": "-"
-  "rollup>@rollup/rollup-win32-x64-msvc": "-"
+  # rollup platform-specific exclusions removed for Windows local development
   "@expo/ngrok-bin>@expo/ngrok-bin-darwin-arm64": "-"
   "@expo/ngrok-bin>@expo/ngrok-bin-darwin-x64": "-"
   "@expo/ngrok-bin>@expo/ngrok-bin-freebsd-ia32": "-"
