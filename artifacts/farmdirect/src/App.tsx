@@ -23,7 +23,7 @@ import type {
 } from '@workspace/api-client-react';
 import { Link, Route, Switch, useLocation, useParams, Router as WouterRouter } from 'wouter';
 
-setBaseUrl('');
+setBaseUrl(import.meta.env.VITE_API_URL || '');
 
 const queryClient = new QueryClient();
 const money = (value: number) => `₹${Number(value || 0).toLocaleString('en-IN', { maximumFractionDigits: 0 })}`;
